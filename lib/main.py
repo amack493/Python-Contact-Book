@@ -15,3 +15,5 @@ class Contact (BaseModel):
     name = CharField()
     phone = CharField()
     email = CharField()
+    address = TextField()
+    
