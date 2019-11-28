@@ -16,4 +16,10 @@ class Contact (BaseModel):
     phone = CharField()
     email = CharField()
     address = TextField()
-    
+
+
+db.create_tables([Contact])
+
+tre = Contact(name='Tre', phone='3018025742',
+              email='amack4693@gmail.com', address='3249 walters ln')
+tre.save()
