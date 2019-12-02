@@ -1,20 +1,22 @@
 print("Welcome to your contact list.")  
 
-UI = """
+Menu = """
 [1] Add Contact
 [2]View Contacts
 [3]Search Contacts
 [4]Exit
 """
 
-class Contact:
+class Contact(object):
     def __init__(self, name=None, phone=None, email=None, address=None):
         self.name = name
         self.phone = phone
         self.email = email
         self.address = address
     
-class App:
+    def __str__(self):
+        return (self.name, self.phone, self.email, self.address)
+class App(object):
     def __init__(self, database):
             self.database = database
             self.contacts= {}
@@ -33,6 +35,11 @@ class App:
                 print(contact)
         else:
             print("No contacts in database.")
+
+    def search(self):
+        name = input("Enter name: ")
+        if name in self.contacts:
+            print(self.contacts[name])
 
     def getinfo(self):
         name = input("Name: ")
