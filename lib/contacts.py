@@ -25,3 +25,18 @@ class App:
             self.contacts[name] = Contact(name, phone, email, address)
         else:
             print("Contact already exists.")
+
+    def viewall(self):
+        if self.contacts:
+            print(f"{self.name}, {self.phone}, {self.email}, {self.address}")
+            for contact in self.contacts.values():
+                print(contact)
+        else:
+            print("No contacts in database.")
+
+    def getinfo(self):
+        name = input("Name: ")
+        phone = input("Phone: ")
+        email = input("Email: ")
+        address = input("Address: ")
+        return name, phone, email, address
