@@ -16,7 +16,7 @@ class Contact(object):
     
     def __str__(self):
         return (self.name, self.phone, self.email, self.address)
-class App(object):
+class App(Contact):
     def __init__(self, database):
             self.database = database
             self.contacts= {}
@@ -47,3 +47,18 @@ class App(object):
         email = input("Email: ")
         address = input("Address: ")
         return name, phone, email, address
+
+    def menu(self):
+        app = App('contacts.data')
+        choice = ' '
+        while choice != '4':
+            if choice == '1':
+                app.add()
+            elif choice == '2':
+                app.viewall()
+            elif choice == '3':
+                app.search()
+            elif choice == '4':
+                print("Goodbye")
+            else:
+                print("HA HA... try again")
