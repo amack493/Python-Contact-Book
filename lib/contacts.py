@@ -13,3 +13,15 @@ class Contact:
         self.phone = phone
         self.email = email
         self.address = address
+    
+class App:
+    def __init__(self, database):
+            self.database = database
+            self.contacts= {}
+
+    def add(self):
+        name, phone, email, address = self.getinfo()
+        if name not in self.contacts:
+            self.contacts[name] = Contact(name, phone, email, address)
+        else:
+            print("Contact already exists.")
